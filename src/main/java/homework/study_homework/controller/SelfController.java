@@ -41,14 +41,4 @@ public class SelfController {
         model.addAttribute("selfs", selfs);
         return "/self/selfList";
     }
-
-    @GetMapping("/self/self")
-    @ResponseBody
-    public Self getSelfData() {
-        List<Self> selfs = selfService.findSelfs();
-        int lastIndex = selfs.size()-1;
-        Self lastself = selfs.get(lastIndex);
-
-        return lastself;
-    }
 }
