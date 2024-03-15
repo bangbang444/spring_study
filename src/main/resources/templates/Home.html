@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <script>
+    function loadName() {
+        fetch('/self/self')  // 예시 URL, 실제 URL은 서버에 따라 다를 수 있습니다.
+            .then(response => response.json())
+            .then(data => {
+                // 서버로부터 전달받은 데이터를 변수에 저장합니다.
+                var name = data.name;
+                var age = data.age;
+
+                // HTML에 데이터를 표시합니다.
+                document.getElementById("namePlaceholder").innerText = name;
+                document.getElementById("agePlaceholder").innerText = age;
+            })
+            .catch(error => {
+                console.error('데이터를 가져오는 중 오류 발생:', error);
+            });
+    }
+
+    window.onload = loadName;
+  </script>
+</head>
+<body>
+<div class="container">
+  <div>
+    <h1>Spring Project</h1>
+    <p>자기 소개하기</p>
+    <p>
+      이름: <span id="namePlaceholder">(이름을 불러오는 중...)</span>
+    </p>
+    <p>
+      나이: <span id="agePlaceholder">(나이을 불러오는 중...)</span>
+    </p>
+    <p>
+      <button onclick="window.location.href='/self/update'">본인 수정</button>
+      <button onclick="window.location.href='/self/selfs'">수정 로그</button>
+    </p>
+  </div>
+</div> <!-- /container -->
+</body>
+</html>

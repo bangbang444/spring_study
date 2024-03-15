@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+  <div>
+    <table>
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>이름</th>
+        <th>#</th>
+        <th>나이</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="self : ${selfs}">
+        <td th:text="${self.id}"></td>
+        <td th:text="${self.name}"></td>
+        <td th:text="${self.age}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <button onclick="window.location.href='/'">메인 화면</button>
+</div> <!-- /container -->
+</body>
+</html>
