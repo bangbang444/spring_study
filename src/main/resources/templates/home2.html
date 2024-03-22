@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Project</title>
+</head>
+<body>
+<div class="container">
+    <div>
+        <h1>Spring Project</h1>
+        <h2>Login Page</h2>
+    </div>
+    <form action="/members/memberLogin" method="get">
+        <div class="form-group">
+            <label for="memberId">아이디: </label>
+            <input type="text" id="memberId" name="memberId" placeholder="아이디를 입력하세요">
+        </div>
+        <div>
+            <label for="password">비밀번호: </label>
+            <input type="text" id="password" name="password" placeholder="패스워드를 입력하세요">
+        </div>
+        <button type="submit">로그인</button>
+    </form>
+    <button onclick="window.location.href='/members/new'">회원가입</button>
+</div> <!-- /container -->
+
+
+</body>
+</html>

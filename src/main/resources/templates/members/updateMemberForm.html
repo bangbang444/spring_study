@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+    <div>
+        <h1>Infomation Modification</h1>
+    </div>
+    <form action="/members/update" method="post">
+        <input type="hidden" id="memberId" name="memberId" th:value="${memberId}" />
+        <div class="form-group">
+            <label for="updateName">변경할 이름</label>
+            <input type="text" id="updateName" name="updateName" placeholder="변경할 이름을 입력하세요">
+        </div>
+        <div class="form-group">
+            <label for="updateAge">변경할 나이</label>
+            <input type="text" id="updateAge" name="updateAge" placeholder="변경할 나이를 입력하세요">
+        </div>
+        <button type="submit">수정</button>
+    </form>
+</div> <!-- /container -->
+</body>
+</html>
