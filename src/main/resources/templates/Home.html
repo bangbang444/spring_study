@@ -7,15 +7,19 @@
   <div>
     <h1>Spring Project</h1>
     <p>자기 소개하기</p>
-    <p th:each="self : ${self}">
-      이름: <span th:text="${self.name}">(이름을 불러오는 중...)</span>
-    </p>
-    <p th:each="self : ${self}">
-      나이: <span th:text="${self.age}">(나이을 불러오는 중...)</span>
+    <p> <!-- th:each="self : ${self}" -->
+      이름: <span th:text="${member.memberName}">(이름을 불러오는 중...)</span>
     </p>
     <p>
-      <button onclick="window.location.href='/self/update'">본인 수정</button>
-      <button onclick="window.location.href='/self/selfs'">수정 로그</button>
+      나이: <span th:text="${member.memberAge}">(나이을 불러오는 중...)</span>
+    </p>
+    <p>
+
+    <form th:action="@{/members/update}" method="get">
+      <input type="hidden" name="memberId" th:value="${memberId}" />
+      <button type="submit">본인 수정</button>
+    </form>
+      <button onclick="window.location.href='/members/updateLog'">수정 로그</button>
     </p>
   </div>
 </div> <!-- /container -->
